@@ -1,0 +1,12 @@
+{
+  "atrax_far_sound": {
+    "category": "ambient",
+    "subtitle": "subtitles.atrax_far_sound",
+    "sounds": [
+      {
+        "name": "mdi:ambient_forest",
+        "stream": false
+      }
+    ]
+  }
+}

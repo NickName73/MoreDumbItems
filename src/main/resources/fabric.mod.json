@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "mdi",
+  "version": "${version}",
+  "name": "More Dumb Items [Fabric]",
+  "description": "Used Intellij,Aseprite",
+  "authors": [
+    "NickName73"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "nitis.nickname73.mdi.mdi.client.MdiClient"
+    ],
+    "main": [
+      "nitis.nickname73.mdi.mdi.Mdi"
+    ]
+  },
+  "mixins": [
+    "MoreDumbItems.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.7",
+    "fabric": "*",
+    "minecraft": "1.17.1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top",
+  "textures": {
+    "bottom": "mdi:blocks/end_stone_door_bottom",
+    "top": "mdi:blocks/end_stone_door_top"
+  }
+}

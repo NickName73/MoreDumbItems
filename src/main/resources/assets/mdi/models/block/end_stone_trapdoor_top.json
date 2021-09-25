@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_orientable_trapdoor_top",
+  "textures": {
+    "texture": "mdi:blocks/end_stone_trapdoor",
+    "particle": "mdi:blocks/end_stone_trapdoor"
+  }
+}

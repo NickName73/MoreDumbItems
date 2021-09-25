@@ -1,0 +1,8 @@
+{
+  "parent": "mdi:custom/hook",
+  "textures": {
+    "hook": "mdi:blocks/hook_wood",
+    "lever": "mdi:blocks/lever_stick",
+    "particle": "mdi:items/hook"
+  }
+}

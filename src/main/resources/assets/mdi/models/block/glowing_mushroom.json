@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "mdi:blocks/glowing_mushroom",
+    "particle": "mdi:blocks/glowing_mushroom"
+  }
+}
