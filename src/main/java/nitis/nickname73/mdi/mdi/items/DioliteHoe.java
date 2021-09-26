@@ -1,7 +1,9 @@
 package nitis.nickname73.mdi.mdi.items;
 
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.*;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -10,10 +12,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class DiolitePickaxe extends PickaxeItem {
-
-
-    public DiolitePickaxe(ToolMaterial toolMaterial, int addDamage, float speed, Settings settings) {
+public class DioliteHoe extends HoeItem {
+    public DioliteHoe(ToolMaterial toolMaterial, int addDamage, float speed, Settings settings) {
         super(toolMaterial, addDamage, speed, settings);
     }
 

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_chestplate"
+  },
+  "addition": {
+    "item": "mdi:diolite_ingot"
+  },
+  "result": {
+    "item": "mdi:diolite_armor_chestplate"
+  }
+}

@@ -1,19 +1,22 @@
 package nitis.nickname73.mdi.mdi.items;
 
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.*;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
+import nitis.nickname73.mdi.mdi.Mdi;
+import nitis.nickname73.mdi.mdi.content.Diolite;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class DiolitePickaxe extends PickaxeItem {
+public class DioliteAxe extends AxeItem {
 
-
-    public DiolitePickaxe(ToolMaterial toolMaterial, int addDamage, float speed, Settings settings) {
+    public DioliteAxe(ToolMaterial toolMaterial, int addDamage, float speed, Settings settings) {
         super(toolMaterial, addDamage, speed, settings);
     }
 

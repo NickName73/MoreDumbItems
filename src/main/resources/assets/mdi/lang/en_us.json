@@ -36,7 +36,12 @@
   "item.mdi.diolite_ingot": "Diolite Ingot",
   "item.mdi.diolite_shard": "Diolite Shard",
   "item.mdi.diolite_nugget": "Diolite Nugget",
-  "item.aramanui": "I TE MARAMA NUI",
+  "_comment": "TOOLS",
+  "item.mdi.diolite_sword": "Diolite Sword",
+  "item.mdi.diolite_pickaxe": "Diolite Pickaxe",
+  "item.mdi.diolite_shovel": "Diolite Shovel",
+  "item.mdi.diolite_axe": "Diolite Axe",
+  "item.mdi.diolite_hoe": "Diolite Hoe",
   "_comment": "ARMOR_ITEM",
   "item.mdi.diolite_armor_boots": "Diolite Boots",
   "item.mdi.diolite_armor_leggings": "Diolite Boots",
@@ -45,5 +50,8 @@
   "_comment": "BLOCKS",
   "block.mdi.pulsar": "Pulsar",
   "block.mdi.diolite_block": "Diolite Block",
-  "block.mdi.diolite_ingot_block": "Diolite Ingot Block"
+  "block.mdi.diolite_ingot_block": "Diolite Ingot Block",
+  "_comment": "ADVANCEMENTS",
+  "adv.mdi.root": "More Dumb Items",
+  "adv.mdi.root.desc": "The root of More Dumb Mods"
 }

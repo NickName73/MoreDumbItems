@@ -50,7 +50,11 @@ public class Diolite implements ModInitializer {
             LEGGINGS = new DioliteArmorItem(EquipmentSlot.LEGS,new FabricItemSettings()),
             CHESTPLATE = new DioliteArmorItem(EquipmentSlot.CHEST, new FabricItemSettings()),
             HELMET = new DioliteArmorItem(EquipmentSlot.HEAD, new FabricItemSettings());
-    public static final SwordItem SWORD = new DioliteSword(MdiToolMaterials.Diolite, 3, -2.4f, dioliteSettings.maxCount(1).group(mdiWeaponGroup));
+    public static final SwordItem SWORD = new DioliteSword(MdiToolMaterials.Diolite, 3, -2.4f, dioliteSettings.group(mdiWeaponGroup));
+    public static final ShovelItem SHOVEL = new DioliteShovel(MdiToolMaterials.Diolite, 1.5f, -3.0f, dioliteSettings.group(mdiWeaponGroup));
+    public static final PickaxeItem PICKAXE = new DiolitePickaxe(MdiToolMaterials.Diolite, 1, -2.8f, dioliteSettings.group(mdiWeaponGroup));
+    public static final AxeItem AXE = new DioliteAxe(MdiToolMaterials.Diolite, 5, -3f, dioliteSettings.group(mdiWeaponGroup));
+    public static final HoeItem HOE = new DioliteHoe(MdiToolMaterials.Diolite, -4,0.0f, dioliteSettings.group(mdiWeaponGroup));
     @Override
     public void onInitialize() {
         Registry.register(Registry.ITEM, new Identifier(modID,"diolite"), RAW);
@@ -72,5 +76,9 @@ public class Diolite implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modID, "diolite_armor_helmet"), HELMET);
 
         Registry.register(Registry.ITEM, new Identifier(modID, "diolite_sword"), SWORD);
+        Registry.register(Registry.ITEM, new Identifier(modID, "diolite_shovel"), SHOVEL);
+        Registry.register(Registry.ITEM, new Identifier(modID, "diolite_pickaxe"), PICKAXE);
+        Registry.register(Registry.ITEM, new Identifier(modID, "diolite_axe"), AXE);
+        Registry.register(Registry.ITEM, new Identifier(modID, "diolite_hoe"), HOE);
     }
 }

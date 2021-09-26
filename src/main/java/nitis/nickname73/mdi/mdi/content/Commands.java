@@ -62,6 +62,12 @@ public class Commands implements ModInitializer {
                                  )
                         )
                     ));
+            CommandNode cookRoot = dispatcher.register(CommandManager.literal("cook")
+                    //Entity selector
+                    .then(CommandManager.argument("entity", EntityArgumentType.entity())
+                            .executes( (context) ->{
+                                return cook(context.getArgument("entity", EntitySelector.class));
+                            })));
             CommandNode chatClearRoot = dispatcher.register(CommandManager.literal("chatclear").executes((context)->{
                 return clearChat();
             }));
@@ -75,7 +81,10 @@ public class Commands implements ModInitializer {
         MinecraftClient.getInstance().inGameHud.clear();
         return 1;
     }
-
+    private static int cook(EntitySelector entitySelector){
+        MinecraftClient.getInstance().inGameHud.addChatMessage(MessageType.SYSTEM, NOT_IMPLEMENT_ERROR.getTextMessage(), Util.NIL_UUID);
+        return 0;
+    }
     public static int setHunger(EntitySelector entity,int amount, ServerCommandSource serverCommandSource){
         MinecraftClient minecraftClient = MinecraftClient.getInstance();
         PlayerEntity player = getPlayerFromEntitySelector(entity,serverCommandSource);
