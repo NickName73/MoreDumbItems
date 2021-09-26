@@ -2,6 +2,7 @@ package nitis.nickname73.mdi.mdi.content;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 

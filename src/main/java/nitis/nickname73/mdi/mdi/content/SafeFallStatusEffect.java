@@ -31,17 +31,17 @@ public class SafeFallStatusEffect extends StatusEffect {
         float fallDist = entity.fallDistance;
         float dist = 0;
         switch (amplifier){
-            case 1:{
+            case 0:{
                 dist = 10;
             }
-            case 2:{
+            case 1:{
                 dist = 8;
             }
-            case 3:{
+            case 2:{
                 dist = 6;
             }
             default:{
-                if(amplifier < 1){
+                if(amplifier < 0){
                     dist = 10;
                 }else{
                     dist = 4;

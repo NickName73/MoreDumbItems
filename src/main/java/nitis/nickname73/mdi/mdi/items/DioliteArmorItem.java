@@ -9,7 +9,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
+import nitis.nickname73.mdi.mdi.Mdi;
 import nitis.nickname73.mdi.mdi.content.Diolite;
 import nitis.nickname73.mdi.mdi.content.MdiEffects;
 import nitis.nickname73.mdi.mdi.content.MdiRarity;
@@ -21,7 +23,7 @@ import java.util.List;
 
 public class DioliteArmorItem extends ArmorItem {
     public DioliteArmorItem(EquipmentSlot equipmentSlot, Settings settings) {
-        super(ModArmorMaterial.DIOLITE_ARMOR_MATERIAL, equipmentSlot, settings);
+        super(ModArmorMaterial.DIOLITE_ARMOR_MATERIAL, equipmentSlot, settings.fireproof().group(Mdi.mdiWeaponGroup).rarity(Rarity.RARE).maxCount(1));
     }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {

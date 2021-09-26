@@ -7,22 +7,19 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import nitis.nickname73.mdi.mdi.Mdi;
-import nitis.nickname73.mdi.mdi.items.DioliteArmorItem;
-import nitis.nickname73.mdi.mdi.items.DioliteBlockItem;
-import nitis.nickname73.mdi.mdi.items.DioliteItem;
+import nitis.nickname73.mdi.mdi.items.*;
 
 import static nitis.nickname73.mdi.mdi.Mdi.*;
 
 public class Diolite implements ModInitializer {
     //Diolite Blocks
+    public static final FabricItemSettings dioliteSettings = new FabricItemSettings().fireproof().rarity(Rarity.RARE);
     public static final Block
             BLOCK = new Block(FabricBlockSettings.of(Material.STONE)
                     .strength(4.5f,6f)
@@ -49,26 +46,11 @@ public class Diolite implements ModInitializer {
                     .group(mdiGroup));
     //Diolite Armour
     public static final ArmorItem
-            BOOTS = new DioliteArmorItem(EquipmentSlot.FEET,new FabricItemSettings()
-                    .fireproof()
-                    .maxCount(1)
-                    .rarity(Rarity.RARE)
-                    .group(Mdi.mdiWeaponGroup)),
-            LEGGINGS = new DioliteArmorItem(EquipmentSlot.LEGS,new FabricItemSettings()
-                    .fireproof()
-                    .maxCount(1)
-                    .rarity(Rarity.RARE)
-                    .group(Mdi.mdiWeaponGroup)),
-            CHESTPLATE = new DioliteArmorItem(EquipmentSlot.CHEST, new FabricItemSettings()
-                    .fireproof()
-                    .maxCount(1)
-                    .rarity(Rarity.RARE)
-                    .group(mdiWeaponGroup)),
-            HELMET = new DioliteArmorItem(EquipmentSlot.HEAD, new FabricItemSettings()
-                    .fireproof()
-                    .maxCount(1)
-                    .rarity(Rarity.RARE)
-                    .group(mdiWeaponGroup));
+            BOOTS = new DioliteArmorItem(EquipmentSlot.FEET,new FabricItemSettings()),
+            LEGGINGS = new DioliteArmorItem(EquipmentSlot.LEGS,new FabricItemSettings()),
+            CHESTPLATE = new DioliteArmorItem(EquipmentSlot.CHEST, new FabricItemSettings()),
+            HELMET = new DioliteArmorItem(EquipmentSlot.HEAD, new FabricItemSettings());
+    public static final SwordItem SWORD = new DioliteSword(MdiToolMaterials.Diolite, 3, -2.4f, dioliteSettings.maxCount(1).group(mdiWeaponGroup));
     @Override
     public void onInitialize() {
         Registry.register(Registry.ITEM, new Identifier(modID,"diolite"), RAW);
@@ -88,5 +70,7 @@ public class Diolite implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modID, "diolite_armor_leggings"), LEGGINGS);
         Registry.register(Registry.ITEM, new Identifier(modID, "diolite_armor_chestplate"), CHESTPLATE);
         Registry.register(Registry.ITEM, new Identifier(modID, "diolite_armor_helmet"), HELMET);
+
+        Registry.register(Registry.ITEM, new Identifier(modID, "diolite_sword"), SWORD);
     }
 }
