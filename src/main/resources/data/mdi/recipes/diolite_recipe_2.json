@@ -1,0 +1,42 @@
+{
+  "group": "mdi",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mdi:diolite_nugget"
+    },
+    "1": {
+      "item": "mdi:diolite_nugget"
+    },
+    "2": {
+      "item": "mdi:diolite_nugget"
+    },
+    "3": {
+      "item": "mdi:diolite_nugget"
+    },
+    "4": {
+      "item": "mdi:diolite_nugget"
+    },
+    "5": {
+      "item": "mdi:diolite_nugget"
+    },
+    "6": {
+      "item": "mdi:diolite_nugget"
+    },
+    "7": {
+      "item": "mdi:diolite_nugget"
+    },
+    "8": {
+      "item": "mdi:diolite_nugget"
+    }
+  },
+  "result": {
+    "item": "mdi:diolite_ingot",
+    "count": 1
+  }
+}

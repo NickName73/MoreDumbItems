@@ -7,7 +7,11 @@
   "authors": [
     "NickName73"
   ],
-  "contact": {},
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mdi",
+    "sources": "cum",
+    "issues": "cum"
+  },
   "license": "All-Rights-Reserved",
   "icon": "icon.png",
   "environment": "*",
@@ -16,7 +20,11 @@
       "nitis.nickname73.mdi.mdi.client.MdiClient"
     ],
     "main": [
+      "nitis.nickname73.mdi.mdi.client.MdiConfig",
       "nitis.nickname73.mdi.mdi.Mdi"
+    ],
+    "modmenu": [
+      "nitis.nickname73.mdi.mdi.client.ConfigerModMenuImpact"
     ]
   },
   "mixins": [

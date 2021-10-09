@@ -9,7 +9,7 @@ import nitis.nickname73.mdi.mdi.content.Diolite;
 import java.util.function.Supplier;
 
 public enum MdiToolMaterials implements ToolMaterial {
-    Diolite(MiningLevels.NETHERITE, 3872, 10f, 5f, 24, () -> {
+    DIOLITE(MiningLevels.NETHERITE, 3872, 12f, 5f, 24, () -> {
         return Ingredient.ofItems(nitis.nickname73.mdi.mdi.content.Diolite.INGOT);
     });
 
