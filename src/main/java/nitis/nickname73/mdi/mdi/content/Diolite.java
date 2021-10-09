@@ -50,11 +50,21 @@ public class Diolite implements ModInitializer {
             LEGGINGS = new DioliteArmorItem(EquipmentSlot.LEGS,new FabricItemSettings()),
             CHESTPLATE = new DioliteArmorItem(EquipmentSlot.CHEST, new FabricItemSettings()),
             HELMET = new DioliteArmorItem(EquipmentSlot.HEAD, new FabricItemSettings());
-    public static final SwordItem SWORD = new DioliteSword(MdiToolMaterials.Diolite, 3, -2.4f, dioliteSettings.group(mdiWeaponGroup));
-    public static final ShovelItem SHOVEL = new DioliteShovel(MdiToolMaterials.Diolite, 1.5f, -3.0f, dioliteSettings.group(mdiWeaponGroup));
-    public static final PickaxeItem PICKAXE = new DiolitePickaxe(MdiToolMaterials.Diolite, 1, -2.8f, dioliteSettings.group(mdiWeaponGroup));
-    public static final AxeItem AXE = new DioliteAxe(MdiToolMaterials.Diolite, 5, -3f, dioliteSettings.group(mdiWeaponGroup));
-    public static final HoeItem HOE = new DioliteHoe(MdiToolMaterials.Diolite, -4,0.0f, dioliteSettings.group(mdiWeaponGroup));
+    public static final SwordItem SWORD = new DioliteSword(MdiToolMaterials.DIOLITE, 3, -2.4f, dioliteSettings.group(mdiWeaponGroup));
+    public static final ShovelItem SHOVEL = new DioliteShovel(MdiToolMaterials.DIOLITE, 1.5f, -3.0f, dioliteSettings.group(mdiWeaponGroup));
+    public static final PickaxeItem PICKAXE = new DiolitePickaxe(MdiToolMaterials.DIOLITE, 1, -2.8f, dioliteSettings.group(mdiWeaponGroup));
+    public static final AxeItem AXE = new DioliteAxe(MdiToolMaterials.DIOLITE, 5, -3f, dioliteSettings.group(mdiWeaponGroup));
+    public static final HoeItem HOE = new DioliteHoe(MdiToolMaterials.DIOLITE, -4,0.0f, dioliteSettings.group(mdiWeaponGroup));
+
+
+    public static final PickaxeItem WOODEN_HOOK = new Hook(ToolMaterials.WOOD, 4, 7f, new FabricItemSettings().group(mdiWeaponGroup));
+    public static final PickaxeItem IRON_HOOK = new Hook(ToolMaterials.IRON, 4, 7f, new FabricItemSettings().group(mdiWeaponGroup));
+    public static final PickaxeItem GOLD_HOOK = new Hook(ToolMaterials.GOLD, 4, 7f, new FabricItemSettings().group(mdiWeaponGroup));
+    public static final PickaxeItem DIAMOND_HOOK = new Hook(ToolMaterials.DIAMOND, 4, 7f, new FabricItemSettings().group(mdiWeaponGroup));
+    public static final PickaxeItem NETHERITE_HOOK = new Hook(ToolMaterials.NETHERITE, 4, 7f, new FabricItemSettings().group(mdiWeaponGroup));
+    public static final PickaxeItem DIOLITE_HOOK = new DioliteHook(MdiToolMaterials.DIOLITE, 4, 7f, new FabricItemSettings().group(mdiWeaponGroup));
+
+
     @Override
     public void onInitialize() {
         Registry.register(Registry.ITEM, new Identifier(modID,"diolite"), RAW);
@@ -80,5 +90,12 @@ public class Diolite implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modID, "diolite_pickaxe"), PICKAXE);
         Registry.register(Registry.ITEM, new Identifier(modID, "diolite_axe"), AXE);
         Registry.register(Registry.ITEM, new Identifier(modID, "diolite_hoe"), HOE);
+
+        Registry.register(Registry.ITEM, new Identifier(modID, "wooden_hook"), WOODEN_HOOK);
+        Registry.register(Registry.ITEM, new Identifier(modID, "iron_hook"), IRON_HOOK);
+        Registry.register(Registry.ITEM, new Identifier(modID, "gold_hook"), GOLD_HOOK);
+        Registry.register(Registry.ITEM, new Identifier(modID, "diamond_hook"), DIAMOND_HOOK);
+        Registry.register(Registry.ITEM, new Identifier(modID, "netherite_hook"), NETHERITE_HOOK);
+        Registry.register(Registry.ITEM, new Identifier(modID, "diolite_hook"), DIOLITE_HOOK);
     }
 }

@@ -9,6 +9,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import nitis.nickname73.mdi.mdi.Mdi;
+import nitis.nickname73.mdi.mdi.client.MdiConfig;
 import nitis.nickname73.mdi.mdi.content.Diolite;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,6 +22,8 @@ public class DioliteAxe extends AxeItem {
     }
 
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(new TranslatableText("tooltip.mdi.diolite").formatted(Formatting.ITALIC).formatted(Formatting.DARK_GRAY));
+        if(MdiConfig.config.dioliteItemsTooltip) {
+            tooltip.add(new TranslatableText("tooltip.mdi.diolite").formatted(Formatting.ITALIC).formatted(Formatting.DARK_GRAY));
+        }
     }
 }

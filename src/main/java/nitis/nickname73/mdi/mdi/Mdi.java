@@ -5,17 +5,11 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.WindowEventHandler;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
+import nitis.nickname73.mdi.mdi.client.MdiConfig;
 import nitis.nickname73.mdi.mdi.content.*;
-
-import java.util.EventListener;
 
 public class Mdi implements ModInitializer {
     public static final String modID = "mdi";
@@ -30,10 +24,11 @@ public class Mdi implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        new Diolite().onInitialize();
-        new RedstoneThings().onInitialize();
-        new MdiEffects().onInitialize();
-        new MdiPotions().onInitialize();
-        new Commands().onInitialize();
+        new Diolite().onInitialize(); // Diolite items
+        new MdiFood().onInitialize(); // Foods
+        new RedstoneThings().onInitialize(); // Redstone items & blocks (Pulsar)
+        new MdiEffects().onInitialize(); // Effects
+        new MdiPotions().onInitialize(); // Effect bottles
+        new Commands().onInitialize(); // Commands
     }
 }

@@ -12,6 +12,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
 import nitis.nickname73.mdi.mdi.Mdi;
+import nitis.nickname73.mdi.mdi.client.MdiConfig;
 import nitis.nickname73.mdi.mdi.content.Diolite;
 import nitis.nickname73.mdi.mdi.content.MdiEffects;
 import nitis.nickname73.mdi.mdi.content.MdiRarity;
@@ -27,9 +28,9 @@ public class DioliteArmorItem extends ArmorItem {
     }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if(doBonusSetEquip)
+        if(doBonusSetEquip && MdiConfig.config.dioliteArmorBonusTooltip)
         tooltip.add(new TranslatableText("tooltip.mdi.diolite_armor_set").formatted(Formatting.GRAY));
-        if(true)
+        if(MdiConfig.config.dioliteItemsTooltip)
         tooltip.add(new TranslatableText("tooltip.mdi.diolite").formatted(Formatting.DARK_GRAY).formatted(Formatting.ITALIC));
     }
     @Override
@@ -41,7 +42,7 @@ public class DioliteArmorItem extends ArmorItem {
     public void doBonusSet(Entity entity){
         try{
             LivingEntity livingEntity = (LivingEntity)entity;
-            if(!livingEntity.hasStatusEffect(MdiEffects.SAFE_FALL)){
+            if(!livingEntity.hasStatusEffect(MdiEffects.SAFE_FALL) && MdiConfig.config.dioliteArmorBonus){
                 livingEntity.addStatusEffect(new StatusEffectInstance(MdiEffects.SAFE_FALL, 120,0, true, false, true));
             }
         }catch (Exception e){

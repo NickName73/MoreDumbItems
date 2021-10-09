@@ -2,33 +2,33 @@ package nitis.nickname73.mdi.mdi.content;
 
 import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.tree.CommandNode;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.EntitySelector;
-import net.minecraft.command.argument.ArgumentTypes;
 import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.command.argument.NumberRangeArgumentType;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.player.HungerConstants;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.MessageType;
-import net.minecraft.server.PlayerManager;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Util;
-import org.apache.commons.lang3.NotImplementedException;
+import nitis.nickname73.mdi.mdi.client.ConfigModMenu;
+import nitis.nickname73.mdi.mdi.client.ConfigerModMenuImpact;
+import nitis.nickname73.mdi.mdi.client.MdiConfig;
 
 public class Commands implements ModInitializer {
     public static final CommandException NOT_IMPLEMENT_ERROR = new CommandException(new TranslatableText("command.mdi.error.not_implement"));
     public static final CommandException ENTITY_NOT_PLAYER = new CommandException(new TranslatableText("command.mdi.error.not_player"));
     public static final CommandException OUT_OF_HUNGER = new CommandException(new TranslatableText("command.mdi.error.out_of_hunger"));
+    public static final CommandException CANNOT_REPAIR = new CommandException(new TranslatableText("command.mdi.error.cannot_repair"));
 
     @Override
     public void onInitialize() {
@@ -62,28 +62,33 @@ public class Commands implements ModInitializer {
                                  )
                         )
                     ));
-            CommandNode cookRoot = dispatcher.register(CommandManager.literal("cook")
-                    //Entity selector
-                    .then(CommandManager.argument("entity", EntityArgumentType.entity())
-                            .executes( (context) ->{
-                                return cook(context.getArgument("entity", EntitySelector.class));
-                            })));
-            CommandNode chatClearRoot = dispatcher.register(CommandManager.literal("chatclear").executes((context)->{
-                return clearChat();
+            CommandNode chatClearRoot = dispatcher.register(CommandManager.literal("chatclear")
+                    .executes((context)->{
+                        return clearChat(context.getSource());
             }));
-            CommandNode chatClearShortype = dispatcher.register(CommandManager.literal("cclr").executes((context)->{
-                return clearChat();
+            CommandNode chatClearShortType = dispatcher.register(CommandManager.literal("cclr")
+                    .executes((context)->{
+                        return clearChat(context.getSource());
             }));
+            CommandNode repairItem = dispatcher.register(CommandManager.literal("repair")
+                    .then(CommandManager.argument("target", EntityArgumentType.entity())
+                    .executes( (context) -> {
+                        return repair(context.getArgument("target", Entity.class),context.getSource());
+                    }))
+            );
         });
     }
-
-    private int clearChat() {
-        MinecraftClient.getInstance().inGameHud.clear();
+    private int repair(Entity entity, ServerCommandSource serverCommandSource){
+        try{
+           ((LivingEntity)entity).getActiveItem().setDamage(0);
+        }catch (Exception e) {
+            serverCommandSource.sendError(CANNOT_REPAIR.getTextMessage());
+        }
         return 1;
     }
-    private static int cook(EntitySelector entitySelector){
-        MinecraftClient.getInstance().inGameHud.addChatMessage(MessageType.SYSTEM, NOT_IMPLEMENT_ERROR.getTextMessage(), Util.NIL_UUID);
-        return 0;
+    private int clearChat(ServerCommandSource serverCommandSource) {
+        MinecraftClient.getInstance().inGameHud.clear();
+        return 1;
     }
     public static int setHunger(EntitySelector entity,int amount, ServerCommandSource serverCommandSource){
         MinecraftClient minecraftClient = MinecraftClient.getInstance();
