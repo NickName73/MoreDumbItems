@@ -2,37 +2,42 @@
   "schemaVersion": 1,
   "id": "mdi",
   "version": "${version}",
-  "name": "More Dumb Items [Fabric]",
+  "name": "More Dumb Items",
   "description": "Used Intellij,Aseprite",
   "authors": [
     "NickName73"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/mdi",
-    "sources": "cum",
-    "issues": "cum"
+    "repo": "https://github.com/NickName73/MoreDumbItems"
   },
-  "license": "All-Rights-Reserved",
+  "license": "MIT",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "nitis.nickname73.mdi.mdi.client.MdiClient"
+      "nitis.mdi.client.MdiClient"
     ],
     "main": [
-      "nitis.nickname73.mdi.mdi.client.MdiConfig",
-      "nitis.nickname73.mdi.mdi.Mdi"
+      "nitis.mdi.client.MdiConfig",
+      "nitis.mdi.Mdi"
     ],
     "modmenu": [
-      "nitis.nickname73.mdi.mdi.client.ConfigerModMenuImpact"
+      "nitis.mdi.client.ConfigerMenuClient"
     ]
   },
   "mixins": [
-    "MoreDumbItems.mixins.json"
+    "mdi.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.7",
+    "fabricloader": ">=0.12.12",
     "fabric": "*",
-    "minecraft": "1.17.1"
+    "minecraft": "1.18.1",
+    "cloth-config": ">=5.0.37"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ ]
+    }
   }
 }

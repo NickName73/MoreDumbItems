@@ -1,0 +1,9 @@
+{
+  "group": "mdi",
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:end_stone"
+  },
+  "result": "mdi:end_stone_trapdoor"
+}

@@ -1,3 +1,0 @@
-# MoreDumbItems-Fabric
-
-CurseForge: https://www.curseforge.com/minecraft/mc-mods/mdi
