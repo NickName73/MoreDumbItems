@@ -19,6 +19,8 @@
   "tooltip.mdi.diolite_armor_set": "Diolite armor protects against falling",
   "_comment": "EFFECTS",
   "effect.mdi.safe_fall": "Safe Fall",
+  "_comment": "ENCHANTMENTS",
+  "enchantment.mdi.test.desc": "TEST",
   "_comment": "POTIONS",
   "item.minecraft.potion.effect.glowing_potion": "Potion of Glowing",
   "item.minecraft.splash_potion.effect.glowing_potion": "Splash Potion of Glowing",

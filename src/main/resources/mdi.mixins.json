@@ -1,9 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "nitis.mdi.mdi.mixin",
+  "package": "nitis.mdi.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BrewingRecipeRegistryAccessor"
   ],
   "client": [
   ],

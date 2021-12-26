@@ -17,12 +17,13 @@ public class Mdi implements ModInitializer {
             .build();
     public static ItemGroup weaponGroup = FabricItemGroupBuilder
             .create(idOf("weapon"))
-            .icon(() -> new ItemStack(MdiItems.RAW_DIOLITE))
+            .icon(() -> new ItemStack(MdiItems.DIOLITE_SWORD))
             .build();
 
     @Override
     public void onInitialize() {
         new MdiStatusEffects().onInitialize();
+        new MdiPotions().onInitialize();
         new MdiBlocks().onInitialize();
         new MdiItems().onInitialize();
         new MdiCommands().onInitialize();

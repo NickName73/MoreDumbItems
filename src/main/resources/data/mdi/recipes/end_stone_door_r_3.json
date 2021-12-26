@@ -1,9 +1,0 @@
-{
-  "group": "mdi",
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:end_stone_bricks"
-  },
-  "result": "mdi:end_stone_door"
-}
