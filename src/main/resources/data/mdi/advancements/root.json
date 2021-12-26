@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "mdi:diolite"
+    },
+    "title": {
+      "translate": "advancements.mdi.root.title"
+    },
+    "description": {
+      "translate": "advancements.mdi.root.description"
+    },
+    "background": "mdi:textures/block/diolite_block",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "root": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

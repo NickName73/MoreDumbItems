@@ -11,6 +11,12 @@ repositories {
     maven { url "https://maven.terraformersmc.com/" }
     //Cloth config
     maven { url "https://maven.shedaniel.me/" }
+    maven {
+        url = 'https://maven.cafeteria.dev'
+        content {
+            includeGroup 'net.adriantodt.fabricmc'
+        }
+    }
 }
 
 dependencies {

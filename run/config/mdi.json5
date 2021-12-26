@@ -1,5 +1,9 @@
 {
+	"safeFallSaveFromVoidDeath": true,
+	"safeFallSaveFromVoidHeight": -80,
 	"dioliteArmorBonus": true,
 	"dioliteArmorBonusTooltip": true,
-	"dioliteItemsTooltip": true
+	"dioliteArmorBonusColor": "GRAY",
+	"dioliteItemsTooltip": true,
+	"dioliteItemsTooltipColor": "DARK_GRAY"
 }

@@ -19,7 +19,7 @@
       "nitis.mdi.client.MdiClient"
     ],
     "main": [
-      "nitis.mdi.client.MdiConfig",
+      "nitis.mdi.MdiConfig",
       "nitis.mdi.Mdi"
     ],
     "modmenu": [
