@@ -27,65 +27,71 @@ public class MdiCommands implements ModInitializer {
     @Override
     public void onInitialize() {
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-            CommandNode hungerRoot = dispatcher.register(CommandManager.literal("hunger").then(CommandManager.argument("player",EntityArgumentType.player())
-                    // /hunger @s
-                    .then(CommandManager.literal("hunger")
-                            // /hunger @s hunger [set|get]
-                            .then(CommandManager.literal("set")
-                                    .then(CommandManager.argument("amount", IntegerArgumentType.integer(0,999))
-                                            .executes((context) ->{
-                                                return setHunger(context.getArgument("player",EntitySelector.class),context.getArgument("amount", int.class),context.getSource());
-                                            })))
-                            .then(CommandManager.literal("get")
-                                    .executes((context) -> {
-                                        return getHunger(context.getArgument("player",EntitySelector.class), context.getSource());
-                                    })
-                            )
-                    )
-                    .then(CommandManager.literal("saturation")
-                            // /hunger @s saturation [set|get]
-                            .then(CommandManager.literal("set")
-                                    .then(CommandManager.argument("amount", FloatArgumentType.floatArg(0f,999f))
-                                            .executes((context) ->{
-                                                return  setSaturation(context.getArgument("player",EntitySelector.class),context.getArgument("amount", Float.class),context.getSource());
-                                            })))
-                            .then(CommandManager.literal("get")
-                                    .executes((context) -> {
-                                        return getSaturation(context.getArgument("player",EntitySelector.class),context.getSource());
-                                    })
-                            )
-                    )
-            ));
-            CommandNode chatClearRoot = dispatcher.register(CommandManager.literal("chatclear")
-                    .executes((context)->{
-                        return clearChat(context.getSource());
-                    }));
-            CommandNode chatClearShortType = dispatcher.register(CommandManager.literal("cclr")
-                    .executes((context)->{
-                        return clearChat(context.getSource());
-                    }));
-            CommandNode healthRoot = dispatcher.register(CommandManager.literal("health")
-                    .then(CommandManager.argument("entity", EntityArgumentType.entity())
-                            .then(CommandManager.literal("abosrb")
-                                    .then(CommandManager.literal("set")
-                                            .then(CommandManager.argument("amount", FloatArgumentType.floatArg(0))
-                                                    .executes((context) -> {
-                                                        return setAbsorbHealth(context.getArgument("entity", EntitySelector.class), context.getArgument("amount", float.class), context.getSource());
-                                                    })))
-                                    .then(CommandManager.literal("get")
-                                            .executes((context) -> {
-                                                return getAbsorbHealth(context.getArgument("entity",EntitySelector.class), context.getSource());
-                                            }))
-                            ).then(CommandManager.literal("set")
-                                    .then(CommandManager.argument("amount", FloatArgumentType.floatArg(0))
-                                            .executes((context) -> {
-                                                return setHealth(context.getArgument("entity", EntitySelector.class), context.getArgument("amount", float.class), context.getSource());
-                                            })))
-                            .then(CommandManager.literal("get")
-                                    .executes((context) -> {
-                                        return getHealth(context.getArgument("entity",EntitySelector.class), context.getSource());
-                                    }))
-            ));
+            if(MdiConfig.config.healthCommand){
+                CommandNode hungerRoot = dispatcher.register(CommandManager.literal("hunger").then(CommandManager.argument("player",EntityArgumentType.player())
+                        // /hunger @s
+                        .then(CommandManager.literal("hunger")
+                                // /hunger @s hunger [set|get]
+                                .then(CommandManager.literal("set")
+                                        .then(CommandManager.argument("amount", IntegerArgumentType.integer(0,999))
+                                                .executes((context) ->{
+                                                    return setHunger(context.getArgument("player",EntitySelector.class),context.getArgument("amount", int.class),context.getSource());
+                                                })))
+                                .then(CommandManager.literal("get")
+                                        .executes((context) -> {
+                                            return getHunger(context.getArgument("player",EntitySelector.class), context.getSource());
+                                        })
+                                )
+                        )
+                        .then(CommandManager.literal("saturation")
+                                // /hunger @s saturation [set|get]
+                                .then(CommandManager.literal("set")
+                                        .then(CommandManager.argument("amount", FloatArgumentType.floatArg(0f,999f))
+                                                .executes((context) ->{
+                                                    return  setSaturation(context.getArgument("player",EntitySelector.class),context.getArgument("amount", Float.class),context.getSource());
+                                                })))
+                                .then(CommandManager.literal("get")
+                                        .executes((context) -> {
+                                            return getSaturation(context.getArgument("player",EntitySelector.class),context.getSource());
+                                        })
+                                )
+                        )
+                ));
+            }
+            if(MdiConfig.config.chatClearCommand){
+                CommandNode chatClearRoot = dispatcher.register(CommandManager.literal("chatclear")
+                        .executes((context)->{
+                            return clearChat(context.getSource());
+                        }));
+                CommandNode chatClearShortType = dispatcher.register(CommandManager.literal("cclr")
+                        .executes((context)->{
+                            return clearChat(context.getSource());
+                        }));
+            }
+            if(MdiConfig.config.healthCommand){
+                CommandNode healthRoot = dispatcher.register(CommandManager.literal("health")
+                        .then(CommandManager.argument("entity", EntityArgumentType.entity())
+                                .then(CommandManager.literal("abosrb")
+                                        .then(CommandManager.literal("set")
+                                                .then(CommandManager.argument("amount", FloatArgumentType.floatArg(0))
+                                                        .executes((context) -> {
+                                                            return setAbsorbHealth(context.getArgument("entity", EntitySelector.class), context.getArgument("amount", float.class), context.getSource());
+                                                        })))
+                                        .then(CommandManager.literal("get")
+                                                .executes((context) -> {
+                                                    return getAbsorbHealth(context.getArgument("entity",EntitySelector.class), context.getSource());
+                                                }))
+                                ).then(CommandManager.literal("set")
+                                        .then(CommandManager.argument("amount", FloatArgumentType.floatArg(0))
+                                                .executes((context) -> {
+                                                    return setHealth(context.getArgument("entity", EntitySelector.class), context.getArgument("amount", float.class), context.getSource());
+                                                })))
+                                .then(CommandManager.literal("get")
+                                        .executes((context) -> {
+                                            return getHealth(context.getArgument("entity",EntitySelector.class), context.getSource());
+                                        }))
+                        ));
+            }
         });
     }
     private int getAbsorbHealth(EntitySelector entity, ServerCommandSource serverCommandSource){

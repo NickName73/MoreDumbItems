@@ -16,7 +16,7 @@ import java.util.List;
 
 public class DioliteSword extends SwordItem {
     public DioliteSword(ToolMaterial toolMaterial, int addDamage, float speed, Settings settings) {
-        super(toolMaterial, addDamage, speed, settings.fireproof().rarity(Rarity.RARE).group(Mdi.weaponGroup).maxCount(1));
+        super(toolMaterial, addDamage, speed, settings.fireproof().rarity(Rarity.RARE).group(Mdi.weaponGroup));
     }
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(MdiConfig.config.dioliteItemsTooltip) {

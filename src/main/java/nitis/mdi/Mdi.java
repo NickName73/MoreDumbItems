@@ -27,6 +27,7 @@ public class Mdi implements ModInitializer {
         new MdiBlocks().onInitialize();
         new MdiItems().onInitialize();
         new MdiCommands().onInitialize();
+        new MdiEnchantments().onInitialize();
     }
     public static MutableText getDioliteTooltip(){
         return MdiConfig.config.dioliteItemsTooltipColor.format(new TranslatableText("tooltip.mdi.diolite"));
@@ -36,5 +37,21 @@ public class Mdi implements ModInitializer {
     }
     public static Identifier idOf(String name){
         return new Identifier(modID,name);
+    }
+
+
+    public static int getTickTime(float time){
+        return (int)time * 20;
+    }
+
+    @Deprecated(forRemoval = true, since = "Use getTickTime() with lowerCase first symbol")
+    public static int GetTickTime(float time) {
+        return (int)time * 20;
+    }
+    public static int getStunTimeAmount(int level) {
+        return Mdi.GetTickTime( MdiConfig.config.stunOptions.firstLevelTime + MdiConfig.config.stunOptions.increaseStunTime * level);
+    }
+    public static int getStunCooldown(int level) {
+        return getTickTime(MdiConfig.config.stunOptions.cooldownTime);
     }
 }

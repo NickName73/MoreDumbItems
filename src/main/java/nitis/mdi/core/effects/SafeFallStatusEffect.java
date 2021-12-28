@@ -7,7 +7,7 @@ import nitis.mdi.MdiConfig;
 
 public class SafeFallStatusEffect extends StatusEffect {
     public SafeFallStatusEffect(){
-        super(StatusEffectCategory.BENEFICIAL,0xa4cbde);
+        super(StatusEffectCategory.BENEFICIAL,0x9784f9);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class SafeFallStatusEffect extends StatusEffect {
         float dist = 0;
         dist = 12 - (amplifier * 2);
 
-        if(entity.getBlockY() < MdiConfig.config.safeFallSaveFromVoidHeight && MdiConfig.config.safeFallSaveFromVoidDeath){
+        if(entity.getBlockY() < MdiConfig.config.safeFallOptions.safeFallSaveFromVoidHeight && MdiConfig.config.safeFallOptions.safeFallSaveFromVoidDeath){
             entity.setPosition(entity.getBlockX(), 560,entity.getBlockZ());
         }
 

@@ -39,9 +39,7 @@ public class DioliteArmorItem extends ArmorItem {
             if(!livingEntity.hasStatusEffect(MdiStatusEffects.SAFE_FALL) && MdiConfig.config.dioliteArmorBonus){
                 livingEntity.addStatusEffect(new StatusEffectInstance(MdiStatusEffects.SAFE_FALL, 120,0, true, false, true));
             }
-        }catch (Exception e){
-
-        }
+        }catch (Exception ignored){}
     }
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
