@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "mdi:items/diolite_hoe"
+    "layer0": "mdi:item/diolite_hoe"
   }
 }

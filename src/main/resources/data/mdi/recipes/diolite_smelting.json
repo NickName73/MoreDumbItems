@@ -1,0 +1,10 @@
+{
+  "group": "diolite_ingot",
+  "type": "minecraft:smelting",
+  "experience": 100,
+  "cookingtime": 1200,
+  "ingredient": {
+    "item": "mdi:diolite"
+  },
+  "result": "mdi:diolite_ingot"
+}

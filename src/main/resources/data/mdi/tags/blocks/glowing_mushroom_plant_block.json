@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:end_stone",
+    "mdi:onium",
+    "minecraft:bedrock",
+    "mdi:diolite_block"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "group": "diolite",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "000",
+    "000",
+    "000"
+  ],
+  "key": {
+    "0": {
+      "item": "mdi:diolite_shard"
+    }
+  },
+  "result": {
+    "item": "mdi:diolite",
+    "count": 1
+  }
+}

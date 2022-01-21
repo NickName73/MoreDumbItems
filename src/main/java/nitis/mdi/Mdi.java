@@ -44,12 +44,8 @@ public class Mdi implements ModInitializer {
         return (int)time * 20;
     }
 
-    @Deprecated(forRemoval = true, since = "Use getTickTime() with lowerCase first symbol")
-    public static int GetTickTime(float time) {
-        return (int)time * 20;
-    }
     public static int getStunTimeAmount(int level) {
-        return Mdi.GetTickTime( MdiConfig.config.stunOptions.firstLevelTime + MdiConfig.config.stunOptions.increaseStunTime * level);
+        return Mdi.getTickTime( MdiConfig.config.stunOptions.firstLevelTime + MdiConfig.config.stunOptions.increaseStunTime * level);
     }
     public static int getStunCooldown(int level) {
         return getTickTime(MdiConfig.config.stunOptions.cooldownTime);

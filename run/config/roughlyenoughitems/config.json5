@@ -50,7 +50,7 @@
 		"overlayVisible": true,
 		"cheatingStyle": "GRAB",
 		"motion": {
-			"favoritesAnimation": true
+			"favoritesAnimation": false
 		}
 	},
 	"advanced": {
@@ -120,7 +120,7 @@
 		}
 	},
 	"appearance": {
-		"recipeScreenType": "UNSET",
+		"recipeScreenType": "COMPOSITE",
 		// Declares the appearance of REI windows.
 		"theme": "LIGHT",
 		"layout": {
@@ -146,6 +146,8 @@
 	"functionality": {
 		// Declares whether REI should remove the recipe book.
 		"disableRecipeBook": false,
+		// Declares whether mob effects should be on the left side instead of the right side.
+		"leftSideMobEffects": true,
 		// Declares whether subsets is enabled.
 		"isSubsetsEnabled": false,
 		"allowInventoryHighlighting": true

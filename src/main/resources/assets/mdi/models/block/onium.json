@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "mdi:blocks/onium_down",
-    "up": "mdi:blocks/onium_top",
-    "north": "mdi:blocks/onium_side",
-    "east": "mdi:blocks/onium_side",
-    "south": "mdi:blocks/onium_side",
-    "west": "mdi:blocks/onium_side",
-    "particle": "mdi:blocks/onium_down"
+    "down": "mdi:block/onium_down",
+    "up": "mdi:block/onium_top",
+    "north": "mdi:block/onium_side",
+    "east": "mdi:block/onium_side",
+    "south": "mdi:block/onium_side",
+    "west": "mdi:block/onium_side",
+    "particle": "mdi:block/onium_down"
   }
 }

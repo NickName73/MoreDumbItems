@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mdi:items/end_stone_door"
+    "layer0": "mdi:item/end_stone_door"
   }
 }

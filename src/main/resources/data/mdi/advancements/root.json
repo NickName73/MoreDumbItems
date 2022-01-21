@@ -9,7 +9,7 @@
     "description": {
       "translate": "advancements.mdi.root.description"
     },
-    "background": "mdi:textures/block/diolite_block",
+    "background": "mdi:textures/background/options.png",
     "show_toast": false,
     "announce_to_chat": false
   },

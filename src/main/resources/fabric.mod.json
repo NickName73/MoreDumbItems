@@ -3,12 +3,17 @@
   "id": "mdi",
   "version": "${version}",
   "name": "More Dumb Items",
-  "description": "Used Intellij,Aseprite",
+  "description": "Used Intellij, Aseprite",
   "authors": [
     "NickName73"
   ],
+  "contributors": [
+
+  ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/mdi",
+    "sources": "https://github.com/NickName73/MoreDumbItems",
+    "issues": "https://github.com/NickName73/MoreDumbItems/issues",
     "repo": "https://github.com/NickName73/MoreDumbItems"
   },
   "license": "MIT",
@@ -31,11 +36,16 @@
   ],
   "depends": {
     "fabricloader": ">=0.12.12",
-    "fabric": "*",
+    "fabric": ">=0.46.0",
     "minecraft": "1.18.1",
     "cloth-config": ">=5.0.37"
   },
   "custom": {
+    "modupdater": {
+      "strategy": "curseforge",
+      "projectID": 362778,
+      "strict": false
+    },
     "modmenu": {
       "badges": [ ]
     }

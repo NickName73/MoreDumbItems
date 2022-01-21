@@ -1,0 +1,16 @@
+{
+  "group": "chocolate_in_paper",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "mdi:chocolate"
+    }
+  ],
+  "result": {
+    "item": "mdi:chocolate_in_paper",
+    "count": 1
+  }
+}

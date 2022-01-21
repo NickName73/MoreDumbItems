@@ -18,7 +18,7 @@ import java.util.function.Consumer;
 
 public class Hook extends PickaxeItem {
     protected ArrayList<Tag<Block>> effectiveBlocks = new ArrayList<>();
-    public static ArrayList<Tag<Block>> hookEffectiveBlocks;
+    public static final ArrayList<Tag<Block>> hookEffectiveBlocks;
     public Hook(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, ArrayList<Tag<Block>> effectiveBlocks, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
         this.effectiveBlocks = effectiveBlocks;
@@ -28,7 +28,7 @@ public class Hook extends PickaxeItem {
     }
 
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.damage(1, (LivingEntity)attacker, (Consumer<LivingEntity>)((e) -> {
+        stack.damage(1, attacker, ((e) -> {
             e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
         }));
         return true;

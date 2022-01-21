@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mdi:items/diolite_leggings"
+    "layer0": "mdi:item/diolite_leggings"
   }
 }

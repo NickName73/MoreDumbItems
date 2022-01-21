@@ -9,7 +9,7 @@ import nitis.mdi.optionSets.StunOptions;
 import nitis.mdi.optionSets.SafeFallOptions;
 
 @Config(name = "mdi")
-@Config.Gui.Background("mdi:textures/backgrounds/options.png")
+@Config.Gui.Background("mdi:textures/background/options.png")
 public class ConfigerMenu implements ConfigData {
     @ConfigEntry.Category("enchantments")
     @ConfigEntry.Gui.CollapsibleObject(startExpanded = true)

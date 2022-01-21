@@ -81,6 +81,8 @@
   "item.mdi.diolite_nugget": "Diolite Nugget",
   "item.mdi.chocolate": "Chocolate",
   "item.mdi.chocolate_in_paper": "Chocolate",
+  "item.mdi.glowing_mushroom": "Glowing Mushroom",
+  "item.mdi.life_fruit": "Life Fruit",
   "_comment": "TOOLS",
   "item.mdi.diolite_sword": "Diolite Sword",
   "item.mdi.diolite_pickaxe": "Diolite Pickaxe",
@@ -99,10 +101,13 @@
   "item.mdi.diolite_armor_chestplate": "Diolite Chestplate",
   "item.mdi.diolite_armor_helmet": "Diolite Helmet",
   "_comment": "BLOCKS",
-  "block.mdi.pulsar": "Pulsar",
   "block.mdi.diolite_block": "Diolite Block",
   "block.mdi.diolite_ingot_block": "Diolite Ingot Block",
+  "block.mdi.glowing_mushroom": "Glowing Mushroom",
+  "block.mdi.onium": "Onium",
   "_comment": "ADVANCEMENTS",
   "advancements.mdi.root.title": "More Dumb Items",
-  "advancements.mdi.root.description": "The root of More Dumb Mods"
+  "advancements.mdi.root.description": "The root of More Dumb Mods",
+  "advancements.mdi.there_is_no_way_back.title": "There Is No Way Back",
+  "advancements.mdi.there_is_no_way_back.description": "Plant a Glowing Mushroom in Nether"
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mdi:items/glowing_mushroom"
+    "layer0": "mdi:item/glowing_mushroom"
   }
 }

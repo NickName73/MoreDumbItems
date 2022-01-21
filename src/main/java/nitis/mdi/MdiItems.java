@@ -11,6 +11,11 @@ import nitis.mdi.core.*;
 
 public class MdiItems implements ModInitializer {
 
+    public static final BlockItem DIOLITE_BLOCK = new DioliteBlockItem(MdiBlocks.DIOLITE_BLOCK, new FabricItemSettings());
+    public static final BlockItem DIOLITE_INGOT_BLOCK = new DioliteBlockItem(MdiBlocks.DIOLITE_INGOT_BLOCK, new FabricItemSettings());
+    public static final BlockItem ONIUM = new BlockItem(MdiBlocks.ONIUM, new FabricItemSettings().group(Mdi.mainGroup));
+    public static final BlockItem GLOWING_MUSHROOM = new BlockItem(MdiBlocks.GLOWING_MUSHROOM, new FabricItemSettings().group(Mdi.mainGroup));
+
     public final static DioliteItem RAW_DIOLITE = new DioliteItem(new FabricItemSettings().maxCount(16));
     public final static DioliteItem DIOLITE_INGOT = new DioliteItem(new FabricItemSettings());
     public final static DioliteItem DIOLITE_INGOT_CHARGED = new DioliteItem(new FabricItemSettings(), true, null);
@@ -42,8 +47,10 @@ public class MdiItems implements ModInitializer {
     @Override
     public void onInitialize() {
         //Block items
-        Registry.register(Registry.ITEM, Mdi.idOf("diolite_block"), new DioliteBlockItem(MdiBlocks.DIOLITE_BLOCK, new FabricItemSettings()));
-        Registry.register(Registry.ITEM, Mdi.idOf("diolite_ingot_block"), new DioliteBlockItem(MdiBlocks.DIOLITE_INGOT_BLOCK, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, Mdi.idOf("diolite_block"), DIOLITE_BLOCK);
+        Registry.register(Registry.ITEM, Mdi.idOf("diolite_ingot_block"), DIOLITE_INGOT_BLOCK);
+        Registry.register(Registry.ITEM, Mdi.idOf("glowing_mushroom"), GLOWING_MUSHROOM);
+        Registry.register(Registry.ITEM, Mdi.idOf("onium"), ONIUM);
         //Resources
         Registry.register(Registry.ITEM, Mdi.idOf("diolite"), RAW_DIOLITE);
         Registry.register(Registry.ITEM, Mdi.idOf("diolite_ingot"), DIOLITE_INGOT);

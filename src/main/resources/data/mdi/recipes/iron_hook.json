@@ -1,0 +1,21 @@
+{
+  "group": "mdi_hook",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "00",
+    " 0",
+    " 1"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:iron_ingot"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "mdi:iron_hook",
+    "count": 1
+  }
+}

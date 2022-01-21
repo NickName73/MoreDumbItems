@@ -1,0 +1,10 @@
+{
+  "group": "diolite_ingot",
+  "type": "minecraft:blasting",
+  "experience": 100,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "mdi:diolite"
+  },
+  "result": "mdi:diolite_ingot"
+}

@@ -1,0 +1,18 @@
+{
+  "group": "diolite_ingot",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "000",
+    "000",
+    "000"
+  ],
+  "key": {
+    "0": {
+      "item": "mdi:diolite_nugget"
+    }
+  },
+  "result": {
+    "item": "mdi:diolite_ingot",
+    "count": 1
+  }
+}

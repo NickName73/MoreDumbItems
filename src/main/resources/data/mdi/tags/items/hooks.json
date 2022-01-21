@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mdi:wooden_hook",
+    "mdi:iron_hook",
+    "mdi:gold_hook",
+    "mdi:diamond_hook",
+    "mdi:netherite_hook",
+    "mdi:diolite_hook"
+  ]
+}

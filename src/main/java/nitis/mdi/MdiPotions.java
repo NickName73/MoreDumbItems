@@ -44,7 +44,9 @@ public class MdiPotions implements ModInitializer {
         Registry.register(Registry.POTION, Mdi.idOf("long_glowing_potion"), LONG_GLOWING);
 
         mapPotions(Potions.NIGHT_VISION, Items.GLOW_INK_SAC, MdiPotions.GLOWING);
+        mapPotions(Potions.AWKWARD, MdiItems.GLOWING_MUSHROOM, MdiPotions.GLOWING);
         variantRecipes(MdiPotions.GLOWING);
+
         mapPotions(Potions.AWKWARD, MdiItems.DIOLITE_SHARD, MdiPotions.SAFE_FALL);
         variantRecipes(MdiPotions.SAFE_FALL);
     }
