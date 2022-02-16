@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.client.gui.RotatingCubeMapRenderer;
 import net.minecraft.client.render.RenderLayer;
 import nitis.mdi.MdiBlocks;
 
@@ -12,5 +13,6 @@ public class MdiClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(MdiBlocks.GLOWING_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MdiBlocks.END_LANTERN, RenderLayer.getCutout());
     }
 }

@@ -2,20 +2,12 @@
   "group": "diolite_block",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "01",
-    "23"
+    "000",
+    "000",
+    "000"
   ],
   "key": {
     "0": {
-      "item": "mdi:diolite"
-    },
-    "1": {
-      "item": "mdi:diolite"
-    },
-    "2": {
-      "item": "mdi:diolite"
-    },
-    "3": {
       "item": "mdi:diolite"
     }
   },

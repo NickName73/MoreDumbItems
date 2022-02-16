@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "mdi:diolite_block",
-    "mdi:diolite_ingot_block"
+    "mdi:diolite_ingot_block",
+    "mdi:end_lantern",
+    "mdi:onium"
   ]
 }

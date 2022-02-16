@@ -17,6 +17,7 @@ repositories {
             includeGroup 'net.adriantodt.fabricmc'
         }
     }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "mdi:block/end_lantern"
+    },
+    "hanging=true": {
+      "model": "mdi:block/end_lantern_hanging"
+    }
+  }
+}

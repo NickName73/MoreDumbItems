@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.registry.Registry;
 import nitis.mdi.core.SmallMushroomPlantBlock;
@@ -29,11 +30,14 @@ public class MdiBlocks implements ModInitializer {
                     .breakByTool(FabricToolTags.PICKAXES, 0)
                     .sounds(BlockSoundGroup.AZALEA));
 
+    public static final LanternBlock END_LANTERN = new LanternBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(3.5F).sounds(BlockSoundGroup.LANTERN).luminance(7).nonOpaque());
+
     @Override
     public void onInitialize() {
         Registry.register(Registry.BLOCK, Mdi.idOf("diolite_block"), DIOLITE_BLOCK);
         Registry.register(Registry.BLOCK, Mdi.idOf("diolite_ingot_block"), DIOLITE_INGOT_BLOCK);
         Registry.register(Registry.BLOCK, Mdi.idOf("onium"), ONIUM);
         Registry.register(Registry.BLOCK, Mdi.idOf("glowing_mushroom"), GLOWING_MUSHROOM);
+        Registry.register(Registry.BLOCK, Mdi.idOf("end_lantern"), END_LANTERN);
     }
 }

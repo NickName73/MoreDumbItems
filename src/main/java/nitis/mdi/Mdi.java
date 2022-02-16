@@ -1,5 +1,9 @@
 package nitis.mdi;
 
+import com.mojang.datafixers.util.Pair;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.DynamicOps;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -7,6 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 
 public class Mdi implements ModInitializer {
 
@@ -28,6 +34,9 @@ public class Mdi implements ModInitializer {
         new MdiItems().onInitialize();
         new MdiCommands().onInitialize();
         new MdiEnchantments().onInitialize();
+        new MdiStructures().onInitialize();
+        new MdiStructures().onInitialize();
+
     }
     public static MutableText getDioliteTooltip(){
         return MdiConfig.config.dioliteItemsTooltipColor.format(new TranslatableText("tooltip.mdi.diolite"));
