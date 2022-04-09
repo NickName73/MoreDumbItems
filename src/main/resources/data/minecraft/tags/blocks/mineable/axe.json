@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "mdi:glowing_mushroom_block",
+    "mdi:glowing_mushroom",
+    "mdi:glowing_mushroom_stem"
+  ]
+}

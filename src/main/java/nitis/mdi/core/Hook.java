@@ -10,6 +10,7 @@ import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -17,9 +18,9 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class Hook extends PickaxeItem {
-    protected ArrayList<Tag<Block>> effectiveBlocks = new ArrayList<>();
-    public static final ArrayList<Tag<Block>> hookEffectiveBlocks;
-    public Hook(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, ArrayList<Tag<Block>> effectiveBlocks, Settings settings) {
+    protected ArrayList<TagKey<Block>> effectiveBlocks = new ArrayList<>();
+    public static final ArrayList<TagKey<Block>> hookEffectiveBlocks;
+    public Hook(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, ArrayList<TagKey<Block>> effectiveBlocks, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
         this.effectiveBlocks = effectiveBlocks;
     }
@@ -38,10 +39,11 @@ public class Hook extends PickaxeItem {
         return !miner.isCreative();
     }
 
+    @Override
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
         boolean contains = false;
-        for (Tag<Block> tag : effectiveBlocks) {
-            if(tag.contains(state.getBlock())) {
+        for (TagKey<Block> tag : effectiveBlocks) {
+            if(state.isIn(tag)) {
                 contains = true;
                 break;
             }
@@ -50,7 +52,7 @@ public class Hook extends PickaxeItem {
     }
 
     static {
-        hookEffectiveBlocks = new ArrayList<Tag<Block>>();
+        hookEffectiveBlocks = new ArrayList<>();
         hookEffectiveBlocks.add(BlockTags.DRAGON_IMMUNE);
         hookEffectiveBlocks.add(BlockTags.WITHER_IMMUNE);
         hookEffectiveBlocks.add(BlockTags.PICKAXE_MINEABLE);

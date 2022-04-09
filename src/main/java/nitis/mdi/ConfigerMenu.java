@@ -5,8 +5,8 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import nitis.mdi.core.MdiColor;
-import nitis.mdi.optionSets.StunOptions;
-import nitis.mdi.optionSets.SafeFallOptions;
+import nitis.mdi.option.sets.StunOptions;
+import nitis.mdi.option.sets.SafeFallOptions;
 
 @Config(name = "mdi")
 @Config.Gui.Background("mdi:textures/background/options.png")

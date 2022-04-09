@@ -1,9 +1,5 @@
 package nitis.mdi;
 
-import com.mojang.datafixers.util.Pair;
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.DataResult;
-import com.mojang.serialization.DynamicOps;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -11,12 +7,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.gen.feature.DefaultFeatureConfig;
+import nitis.mdi.contlist.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Mdi implements ModInitializer {
 
-    public static final String modID = "mdi";
+    public final static String MOD_ID = "mdi";
+    public final static Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static ItemGroup mainGroup = FabricItemGroupBuilder
             .create(idOf("main"))
             .icon(() -> new ItemStack(MdiItems.RAW_DIOLITE))
@@ -34,8 +32,6 @@ public class Mdi implements ModInitializer {
         new MdiItems().onInitialize();
         new MdiCommands().onInitialize();
         new MdiEnchantments().onInitialize();
-        new MdiStructures().onInitialize();
-        new MdiStructures().onInitialize();
 
     }
     public static MutableText getDioliteTooltip(){
@@ -45,7 +41,7 @@ public class Mdi implements ModInitializer {
         return MdiConfig.config.dioliteArmorBonusColor.format(new TranslatableText("tooltip.mdi.diolite_armor_set"));
     }
     public static Identifier idOf(String name){
-        return new Identifier(modID,name);
+        return new Identifier(MOD_ID,name);
     }
 
 

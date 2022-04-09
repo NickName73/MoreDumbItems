@@ -11,9 +11,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
 import nitis.mdi.Mdi;
-import nitis.mdi.MdiArmorMaterial;
-import nitis.mdi.MdiItems;
-import nitis.mdi.MdiStatusEffects;
+import nitis.mdi.contlist.MdiItems;
+import nitis.mdi.contlist.MdiStatusEffects;
 import nitis.mdi.MdiConfig;
 import org.jetbrains.annotations.Nullable;
 

@@ -5,6 +5,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class DioliteHook extends Hook {
 
-    public DioliteHook(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, ArrayList<Tag<Block>> effectiveBlocks, Settings settings) {
+    public DioliteHook(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, ArrayList<TagKey<Block>> effectiveBlocks, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, effectiveBlocks, settings.fireproof().rarity(Rarity.RARE));
     }
 

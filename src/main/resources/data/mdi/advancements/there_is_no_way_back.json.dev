@@ -1,0 +1,17 @@
+{
+  "display": {
+    "icon": {
+      "item": "mdi:glowing_mushroom"
+    },
+    "title": {
+      "translate": "advancements.mdi.there_is_no_way_back.title"
+    },
+    "description": {
+      "translate": "advancements.mdi.there_is_no_way_back.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "mdi:root"
+}
