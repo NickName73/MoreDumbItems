@@ -7,6 +7,7 @@ import com.mojang.brigadier.tree.CommandNode;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientCommandSource;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -60,16 +61,6 @@ public class MdiCommands implements ModInitializer {
                                 )
                         )
                 ));
-            }
-            if(MdiConfig.config.chatClearCommand){
-                CommandNode chatClearRoot = dispatcher.register(CommandManager.literal("chatclear")
-                        .executes((context)->{
-                            return clearChat(context.getSource());
-                        }));
-                CommandNode chatClearShortType = dispatcher.register(CommandManager.literal("cclr")
-                        .executes((context)->{
-                            return clearChat(context.getSource());
-                        }));
             }
             if(MdiConfig.config.healthCommand){
                 CommandNode healthRoot = dispatcher.register(CommandManager.literal("health")
@@ -146,10 +137,6 @@ public class MdiCommands implements ModInitializer {
         }catch(Exception e){
             return 0;
         }
-    }
-    private int clearChat(ServerCommandSource serverCommandSource) {
-        MinecraftClient.getInstance().inGameHud.clear();
-        return 1;
     }
     public static int setHunger(EntitySelector entity,int amount, ServerCommandSource serverCommandSource){
         MinecraftClient minecraftClient = MinecraftClient.getInstance();
