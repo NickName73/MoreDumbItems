@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "mdi",
   "version": "${version}",
-  "name": "More Dumb Items",
+  "name": "${mod_name}",
   "description": "Used Intellij, Aseprite",
   "authors": [
     "NickName73"

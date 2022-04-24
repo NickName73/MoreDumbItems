@@ -32,7 +32,6 @@ public class Mdi implements ModInitializer {
         new MdiItems().onInitialize();
         new MdiCommands().onInitialize();
         new MdiEnchantments().onInitialize();
-
     }
     public static MutableText getDioliteTooltip(){
         return MdiConfig.config.dioliteItemsTooltipColor.format(new TranslatableText("tooltip.mdi.diolite"));
