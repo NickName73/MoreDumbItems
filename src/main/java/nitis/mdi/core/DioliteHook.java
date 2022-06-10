@@ -4,7 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.tag.Tag;
 import net.minecraft.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;

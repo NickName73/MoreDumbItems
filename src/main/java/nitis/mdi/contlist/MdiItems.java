@@ -46,8 +46,7 @@ public class MdiItems implements ModInitializer {
     public static final Hook DIAMOND_HOOK = new Hook(ToolMaterials.DIAMOND, 4, 7f, Hook.hookEffectiveBlocks, new FabricItemSettings().group(Mdi.weaponGroup));
     public static final Hook NETHERITE_HOOK = new Hook(ToolMaterials.NETHERITE, 4, 7f, Hook.hookEffectiveBlocks, new FabricItemSettings().group(Mdi.weaponGroup));
     public static final DioliteHook DIOLITE_HOOK = new DioliteHook(MdiToolMaterials.DIOLITE, 4, 7f, Hook.hookEffectiveBlocks, new FabricItemSettings().group(Mdi.weaponGroup));
-
-    public static final Item LIFE_FRUIT = new Item(new FabricItemSettings().group(Mdi.mainGroup).food(new FoodComponent.Builder().statusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 90 * 20, 6),1f).alwaysEdible().hunger(6).saturationModifier(0.2f).build()));
+    public static final Item LIFE_FRUIT = new StatusEffectFoodItem(new FabricItemSettings().group(Mdi.mainGroup), new FoodComponent.Builder().alwaysEdible().hunger(6).saturationModifier(0.2f), new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 90 * 20, 6));
     public static final Item CHOCOLATE = new Item(new FabricItemSettings().group(Mdi.mainGroup).maxCount(64).food( new FoodComponent.Builder().alwaysEdible().saturationModifier(0.5f).hunger(3).build()));
     public static final Item CHOCOLATE_IN_PAPER = new Item(new FabricItemSettings().group(Mdi.mainGroup).maxCount(64).food( new FoodComponent.Builder().alwaysEdible().saturationModifier(0.5f).hunger(3).build()));
 

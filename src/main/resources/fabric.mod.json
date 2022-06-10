@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "mdi",
   "version": "${version}",
-  "name": "${mod_name}",
+  "name": "More Dumb Items",
   "description": "Used Intellij, Aseprite",
   "authors": [
     "NickName73"
@@ -17,7 +17,7 @@
     "repo": "https://github.com/NickName73/MoreDumbItems"
   },
   "license": "MIT",
-  "icon": "icon.png",
+  "icon": "logo.png",
   "environment": "*",
   "entrypoints": {
     "client": [
@@ -35,9 +35,9 @@
     "mdi.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.13.1",
-    "fabric": ">=0.47.9",
-    "minecraft": "1.18.2",
+    "fabricloader": ">=0.14.6",
+    "fabric": ">=0.55.2",
+    "minecraft": ">=1.19",
     "cloth-config": ">=5.0.37"
   },
   "recommends": {

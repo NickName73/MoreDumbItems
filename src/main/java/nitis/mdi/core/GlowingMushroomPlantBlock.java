@@ -9,9 +9,9 @@ import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
-import java.util.Random;
 import java.util.function.Supplier;
 
 public class GlowingMushroomPlantBlock extends PlantBlock implements Fertilizable {
@@ -55,7 +55,7 @@ public class GlowingMushroomPlantBlock extends PlantBlock implements Fertilizabl
         }
         PlayerEntity player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 10, false);
         if (player != null){
-            
+
         }
     }
 }

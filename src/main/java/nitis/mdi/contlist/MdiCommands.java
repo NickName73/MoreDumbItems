@@ -5,7 +5,7 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.tree.CommandNode;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientCommandSource;
 import net.minecraft.command.CommandException;
@@ -14,22 +14,23 @@ import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.MessageType;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.GameRuleCommand;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Util;
 import net.minecraft.world.GameRules;
 import nitis.mdi.MdiConfig;
 
 public class MdiCommands implements ModInitializer {
-    public static final CommandException NOT_IMPLEMENT_ERROR = new CommandException(new TranslatableText("command.mdi.error.not_implement"));
-    public static final CommandException ENTITY_NOT_PLAYER = new CommandException(new TranslatableText("command.mdi.error.not_player"));
-    public static final CommandException OUT_OF_HUNGER = new CommandException(new TranslatableText("command.mdi.error.out_of_hunger"));
+    public static final CommandException NOT_IMPLEMENT_ERROR = new CommandException(Text.translatable("command.mdi.error.not_implement"));
+    public static final CommandException ENTITY_NOT_PLAYER = new CommandException(Text.translatable("command.mdi.error.not_player"));
+    public static final CommandException OUT_OF_HUNGER = new CommandException(Text.translatable("command.mdi.error.out_of_hunger"));
 
     @Override
     public void onInitialize() {
+        /*
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
             if(MdiConfig.config.healthCommand){
                 CommandNode hungerRoot = dispatcher.register(CommandManager.literal("hunger").then(CommandManager.argument("player",EntityArgumentType.player())
@@ -87,98 +88,6 @@ public class MdiCommands implements ModInitializer {
                         ));
             }
         });
-    }
-    private int getAbsorbHealth(EntitySelector entity, ServerCommandSource serverCommandSource){
-        try{
-            MinecraftClient minecraftClient = MinecraftClient.getInstance();
-            LivingEntity livingEntity = (LivingEntity)entity.getEntity(serverCommandSource);
-            float health = livingEntity.getAbsorptionAmount();
-            minecraftClient.inGameHud.addChatMessage(MessageType.SYSTEM, new TranslatableText("command.mdi.get_absorb", health), Util.NIL_UUID);
-            return 1;
-        }catch(Exception e){
-            return 0;
-        }
-    }
-    private int setAbsorbHealth(EntitySelector entity, float amount, ServerCommandSource serverCommandSource){
-        try{
-            MinecraftClient minecraftClient = MinecraftClient.getInstance();
-            LivingEntity livingEntity = (LivingEntity)entity.getEntity(serverCommandSource);
-            if(livingEntity.getAbsorptionAmount() == amount) {
-                return 2;
-            }
-            livingEntity.setAbsorptionAmount(amount);
-            minecraftClient.inGameHud.addChatMessage(MessageType.SYSTEM, new TranslatableText("command.mdi.set_absorb", livingEntity.getAbsorptionAmount()), Util.NIL_UUID);
-            return 1;
-        }catch(Exception e){
-            return 0;
-        }
-    }
-    private int getHealth(EntitySelector entity, ServerCommandSource serverCommandSource){
-        try{
-            MinecraftClient minecraftClient = MinecraftClient.getInstance();
-            LivingEntity livingEntity = (LivingEntity)entity.getEntity(serverCommandSource);
-            float health = livingEntity.getHealth();
-            minecraftClient.inGameHud.addChatMessage(MessageType.SYSTEM, new TranslatableText("command.mdi.get_health", health), Util.NIL_UUID);
-            return 1;
-        }catch(Exception e){
-            return 0;
-        }
-    }
-    private int setHealth(EntitySelector entity, float amount, ServerCommandSource serverCommandSource){
-        try{
-            MinecraftClient minecraftClient = MinecraftClient.getInstance();
-            LivingEntity livingEntity = (LivingEntity)entity.getEntity(serverCommandSource);
-            if(livingEntity.getHealth() == amount) {
-                return 2;
-            }
-            livingEntity.setHealth(amount);
-            minecraftClient.inGameHud.addChatMessage(MessageType.SYSTEM, new TranslatableText("command.mdi.set_health", livingEntity.getHealth()), Util.NIL_UUID);
-            return 1;
-        }catch(Exception e){
-            return 0;
-        }
-    }
-    public static int setHunger(EntitySelector entity,int amount, ServerCommandSource serverCommandSource){
-        MinecraftClient minecraftClient = MinecraftClient.getInstance();
-        PlayerEntity player = getPlayerFromEntitySelector(entity,serverCommandSource);
-        player.getHungerManager().setFoodLevel(amount);
-        minecraftClient.inGameHud.addChatMessage(MessageType.SYSTEM, new TranslatableText("command.mdi.set_hunger", amount), Util.NIL_UUID);
-        return 1;
-    }
-    public static int getHunger(EntitySelector entity, ServerCommandSource serverCommandSource){
-        MinecraftClient minecraftClient = MinecraftClient.getInstance();
-        PlayerEntity player = getPlayerFromEntitySelector(entity,serverCommandSource);
-        float hunger = player.getHungerManager().getFoodLevel();
-        minecraftClient.inGameHud.addChatMessage(MessageType.SYSTEM, new TranslatableText("command.mdi.get_hunger",hunger), Util.NIL_UUID);
-        return 1;
-    }
-
-    public static int setSaturation(EntitySelector entity,float amount, ServerCommandSource serverCommandSource){
-        MinecraftClient minecraftClient = MinecraftClient.getInstance();
-        PlayerEntity player = getPlayerFromEntitySelector(entity,serverCommandSource);
-        player.getHungerManager().setSaturationLevel(amount);
-        minecraftClient.inGameHud.addChatMessage(MessageType.SYSTEM, new TranslatableText("command.mdi.set_saturation", amount), Util.NIL_UUID);
-        return 1;
-    }
-    public static int getSaturation(EntitySelector entity, ServerCommandSource serverCommandSource){
-        MinecraftClient minecraftClient = MinecraftClient.getInstance();
-        PlayerEntity player = getPlayerFromEntitySelector(entity,serverCommandSource);
-        float saturation = player.getHungerManager().getSaturationLevel();
-        minecraftClient.inGameHud.addChatMessage(MessageType.SYSTEM, new TranslatableText("command.mdi.get_saturation",saturation), Util.NIL_UUID);
-        return 1;
-    }
-
-
-
-
-
-    public static PlayerEntity getPlayerFromEntitySelector(EntitySelector entitySelector, ServerCommandSource serverCommandSource){
-        try {
-            PlayerEntity player = (PlayerEntity)entitySelector.getEntity(serverCommandSource);
-            return player;
-        } catch (CommandSyntaxException e) {
-            serverCommandSource.sendError(ENTITY_NOT_PLAYER.getTextMessage());
-            return null;
-        }
+        */
     }
 }

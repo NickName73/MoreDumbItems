@@ -30,7 +30,6 @@ public class SaturatedEnd {
         Biome.Builder builder = new Biome.Builder();
         return builder
                 .precipitation(Biome.Precipitation.NONE)
-                .category(Biome.Category.THEEND)
                 .temperature(0.5F)
                 .downfall(0.5F)
                 .effects((new BiomeEffects.Builder())

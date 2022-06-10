@@ -4,8 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.*;
 import net.minecraft.util.Identifier;
 import nitis.mdi.contlist.*;
 import org.slf4j.Logger;
@@ -34,10 +33,10 @@ public class Mdi implements ModInitializer {
         new MdiEnchantments().onInitialize();
     }
     public static MutableText getDioliteTooltip(){
-        return MdiConfig.config.dioliteItemsTooltipColor.format(new TranslatableText("tooltip.mdi.diolite"));
+        return MdiConfig.config.dioliteItemsTooltipColor.format(Text.translatable("tooltip.mdi.diolite"));
     }
     public static MutableText getDioliteArmorBonusTooltip() {
-        return MdiConfig.config.dioliteArmorBonusColor.format(new TranslatableText("tooltip.mdi.diolite_armor_set"));
+        return MdiConfig.config.dioliteArmorBonusColor.format(Text.translatable("tooltip.mdi.diolite_armor_set"));
     }
     public static Identifier idOf(String name){
         return new Identifier(MOD_ID,name);

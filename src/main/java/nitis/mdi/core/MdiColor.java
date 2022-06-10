@@ -1,8 +1,6 @@
 package nitis.mdi.core;
 
 import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 
 public enum MdiColor {
@@ -23,8 +21,8 @@ public enum MdiColor {
     PURPLE(Formatting.LIGHT_PURPLE),
     DARK_PURPLE(Formatting.DARK_PURPLE);
 
-    private Formatting format;
-    public MutableText format(TranslatableText text){
+    private final Formatting format;
+    public MutableText format(MutableText text){
         return text.formatted(format);
     }
     public Formatting getFormat(){
